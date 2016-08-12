@@ -36,3 +36,7 @@ PubSub will enable that distributed dynamic content applications on top of IPFS 
 ### Slides
 
 - [XL Publish Subscribe Systems](http://gossple2.irisa.fr/~akermarr/LSDS-EPFL-5-new.pdf)
+
+### Terms
+
+There is an [IPFS Glossary](https://github.com/ipfs/glossary), a work in progress, which should have definitions for terms used in pubsub. If you are consistently running into terms that you do not know the meaning of, please open an issue on that repository and we can work on a definition that will help you (and others!) going forward.
