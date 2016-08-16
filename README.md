@@ -10,7 +10,7 @@ PubSub, or Publish-Subscribe, is an area of research in distributed systems that
 PubSub will enable that distributed dynamic content applications on top of IPFS to have submilisecond updates accross the network, enabling them to have a realtime like UX.
 
 # Roadmap
-
+- [Main issue about pubsub roadmap and TODOs](https://github.com/libp2p/pubsub/issues/9)
 - [ ] [Literature review](https://github.com/libp2p/pubsub/issues/4)
 - [ ] [PubSub use cases study](https://github.com/libp2p/pubsub/issues/6)
 - [ ] Prototype 1 - Fullfill the interface expectations, propagation of messages through the network
