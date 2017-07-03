@@ -26,6 +26,9 @@ PubSub will enable that distributed dynamic content applications on top of IPFS 
 ### Papers
 
 - Compreensive PubSub Reading list - https://ipfs.io/ipfs/QmNinWNHd287finciBwbgovkAqEBQKvnys1W26sY8uupc5
+- [Epidemic Broadcast Trees](http://www.gsd.inesc-id.pt/~ler/docencia/rcs1617/papers/srds07.pdf)
+- [HyParView: a membership protocol for reliable gossip-based broadcast](http://asc.di.fct.unl.pt/~jleitao/pdf/dsn07-leitao.pdf)
+- [GoCast: Gossip-enhanced Overlay Multicast for Fast and Dependable Group Communication](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.75.4811)
 
 ### Books
 
