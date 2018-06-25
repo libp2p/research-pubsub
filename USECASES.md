@@ -53,7 +53,7 @@ PubSub use cases
         - Be able to join a 'ring of publishers'
         - Publish under a key or several keys
   - Simple example:
-    - Wordpress webpage   // subscribe to all updates in setion / page / set of pages; subscribe to updates by person / set of people, to updates with given content (string) or specific update metadata iinformation 
+    - Wordpress webpage   // subscribe to all updates in setion / page / set of pages; subscribe to updates by person / set of people, to updates with given content (string) or specific update metadata iinformation
     - Have several roles (Author/Editor/Subscriber), organize the network based on these roles (e.g Author link to Editor and subscribers, subscribers to subscribers)
     - Converge the news feeds through CRDT (offload that responsability from the pubsub protocol)
       // stock ticker based on topic (market / stock domain / companu names), based on content (e.g., variation over X% )
@@ -132,3 +132,48 @@ Similar requirements to chat, but events are more frequent and smaller
 Properties:
 1. Persistant queues of messages per topic, but of bounded length if no reads occur, futher older messages may be cleared.
 2. Effortless topic creation (there's no create topic or other topic management on the publisher side)
+
+
+# Software Sensor Network
+
+### Description
+
+Support a global network of software sensors. A 'software sensor' is a node in the proposed network that takes zero or more input streams and shares messages in a single output stream. Software sensors have a unique identity and produce signed messages that can be verifiably traced back to the emitting sensor. We imagine two types of software sensors: `Atomic` and `Composite`.
+
+**Atomic Sensors** broadcast messages that contain a single, arbitrary data structure (as defined by some protocol). The data contained in `Atomic` sensor messages has pointers to previous broadcasts, and are used in arbitrary compositions by network participants and consumers. Atomic Sensors may be a mix of hardware and software, or software only. We envision software sensors often running on embedded hardware and publishing messages based on sensor readings.
+
+**Composite Sensors** broadcast messages that contain a single, arbitrary data structure whose end value(s) are composed from messages from various, upstream `Atomic` and `Composite` sensors in the network. In this sense, `Composite` sensors can be seen as generating higher-order data and messages. These higher-order messages can be consumed by other network participants. Composite sensors also contain knowledge of the streams they tap to create their published messages. This allows subscribers to access the tree of intermediate messages that led to the publication of a given message all the way down to the originating `Atomic` sensors.
+
+
+### Examples
+
+**Atomic Example**
+- Hardware + software: A single sensor that consists of a physical water temperature sensor that is able to automatically broadcast a message with the current water temperature, to the network, every minute.
+
+- Software-only example: A research team that, based on their latest findings, updates a value representing the volume of E. coli required to synthesize biofuel in a given aqueous environment. Whenever the value changes, a message containing the new value is automatically broadcast to the network.
+
+**Composite Example**
+
+- Hardware + software example: A single sensor that reads data directly from several physical water temperature sensors, and also subscribes to several water temperature `Atomic` sensors in the network. It then composes the various temperatures into a single average value and automatically broadcasts it to the network in its single, composited message.
+
+- Software-only example: A single sensor that only subscribes to several water temperature `Atomic` sensors in the network and composes the various temperatures into a single average value and automatically broadcasts to the network it in a message.
+
+
+### Requirements
+
+- Topic based
+- JS library preferred at the outset
+- Low latency (for actuation on perceived 'real time' data)
+- Push (for subscriber)
+
+### Interface
+
+**Subscribe:** `ipfs.sub('topic', (sender, message) => ...)`
+  - `topic`:
+    - can include wildcards (see above example: `topic-from-haad-*`)
+    - might be a stream / software sensor id
+    - this implies signed messages
+
+**Publish:** `ipfs.publish('topic', message)`
+  - `message`:
+    - Preferrable for it to be actual data (could be a <hash> to look up; obvious tradeoffs)
