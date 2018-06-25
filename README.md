@@ -7,7 +7,7 @@ pubsub
 
 PubSub, or Publish-Subscribe, is an area of research in distributed systems that enables applications to propagate information throughout the network in a structured manner, with or without guarantees like: order, delivery, efficiency, fault tolerance and so on.
 
-PubSub will enable that distributed dynamic content applications on top of IPFS to have submilisecond updates accross the network, enabling them to have a realtime like UX.
+PubSub will enable distributed dynamic content applications on top of IPFS to have submillisecond updates across the network, enabling them to have a realtime-like UX.
 
 # Roadmap
 - [Main issue about pubsub roadmap and TODOs](https://github.com/libp2p/pubsub/issues/9)
@@ -25,7 +25,7 @@ PubSub will enable that distributed dynamic content applications on top of IPFS 
 
 ### Papers
 
-- Compreensive PubSub Reading list - https://ipfs.io/ipfs/QmNinWNHd287finciBwbgovkAqEBQKvnys1W26sY8uupc5
+- Comprehensive PubSub Reading list - https://ipfs.io/ipfs/QmNinWNHd287finciBwbgovkAqEBQKvnys1W26sY8uupc5
 
 ### Books
 
