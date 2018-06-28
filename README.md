@@ -1,27 +1,28 @@
-pubsub
-======
+# research-pubsub
 
-> Discussions and Planning about getting PubSub on IPFS/libp2p
+> Research on PubSub algorithms for libp2p
 
-# tl;dr;
+The latest spec drafts and implementations live in [libp2p/specs/pubsub](https://github.com/libp2p/specs/tree/master/pubsub) and [libp2p/specs/pubsub/gossipsub](https://github.com/libp2p/specs/tree/master/pubsub/gossipsub).
+
+## tl;dr;
 
 PubSub, or Publish-Subscribe, is an area of research in distributed systems that enables applications to propagate information throughout the network in a structured manner, with or without guarantees like: order, delivery, efficiency, fault tolerance and so on.
 
 PubSub will enable distributed dynamic content applications on top of IPFS to have submillisecond updates across the network, enabling them to have a realtime-like UX.
 
-# Roadmap
+## Roadmap
 - [Main issue about pubsub roadmap and TODOs](https://github.com/libp2p/pubsub/issues/9)
 - [ ] [Literature review](https://github.com/libp2p/pubsub/issues/4)
 - [ ] [PubSub use cases study](https://github.com/libp2p/pubsub/issues/6)
 - [ ] Prototype 1 - Fullfill the interface expectations, propagation of messages through the network
 - [ ] Tree Forming
 
-# Discussions
+## Discussions
 
 - [Previous discussions on ipfs/notes](https://github.com/ipfs/notes/issues?q=is%3Aissue+is%3Aopen+label%3Apubsub)
 - [IPFS Workshop Notes](https://github.com/ipfs/2016-Q3-Workshop/issues/17#issuecomment-235006729)
 
-# PubSub Research Review (papers, books, talks, lectures, etc)
+## PubSub Research Review (papers, books, talks, lectures, etc)
 
 ### Papers
 
